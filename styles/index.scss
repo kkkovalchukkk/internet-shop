@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-$brand-color: #eb0100;
-$light-brand-color:#eb000059;
+$brand-color: #FB8122;
+$light-brand-color:#fb8022c7;
 $main-dark:#333;
 $dark:#222;
+$grey:#b5b5b9;
 $light:#f5f5f5;
 $wrapper-width:1650px;
 
@@ -29,13 +30,17 @@ $wrapper-width:1650px;
     box-sizing: border-box;
 }
 
-
+.active-link {
+    font-weight: 500;
+    color: $brand-color
+}
 
 .wrapper {
     width: 100%;
     height: 100%;
     max-width: $wrapper-width;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 header {
@@ -51,7 +56,7 @@ header {
         width: 100%;
         height: 100vh;
         max-height: 40px;
-        background-color: $dark;
+        background-color: $main-dark;
 
 
         .location,
@@ -110,15 +115,10 @@ header {
             max-height: 44px;
             margin-left: 1.25rem;
             margin-right: auto;
-            background: #f2f2f2;
 
-            input {
-                background: #f2f2f2;
-
-            }
 
             * {
-                fill: $main-dark;
+                fill: $brand-color;
             }
         }
 
@@ -126,7 +126,7 @@ header {
             display: flex;
             align-items: center;
             width: 100%;
-            max-width: 320px;
+            max-width: 220px;
             justify-content: space-around;
 
             .nav-link {
@@ -142,10 +142,10 @@ header {
                 }
 
                 &:hover {
-                    color: rgb(255, 0, 0);
+                    color: $brand-color;
 
                     * {
-                        fill: rgb(255, 0, 0);
+                        fill: $brand-color;
                     }
                 }
 
@@ -177,7 +177,7 @@ header {
     padding: 2px;
 
     &:hover {
-        border-color: #8e8e93;
+        border-color: $brand-color;
     }
 
 
@@ -229,6 +229,10 @@ header {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            &:hover {
+                color: $brand-color;
+            }
         }
     }
 
@@ -255,7 +259,7 @@ header {
 
     .swiper-button-disabled {
         * {
-            fill: #eb000073;
+            fill: $light-brand-color;
         }
     }
 
@@ -269,21 +273,37 @@ header {
     }
 }
 
+
 .breadcrumbs {
     margin: 20px 0;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: .875rem;
+    vertical-align: center;
+
+    .breadcrumb-link {
+        transition: color .13s ease;
+    }
+
+    .breadcrumb-link:hover {
+        color: $brand-color;
+    }
+
+    * {
+        fill: $main-dark;
+    }
 
     .chevron-right-icon,
     .home-icon {
+        transform: translateY(1.5px);
         width: 20px !important;
         height: 20px !important;
     }
 }
 
 .title {
+    margin-bottom: 20px;
     font-size: 2rem;
     line-height: 3rem;
     font-weight: 700;
@@ -298,13 +318,7 @@ header {
             align-items: flex-start;
         }
 
-        .breadcrumbs {
-
-
-            * {
-                fill: $main-dark;
-            }
-        }
+        .breadcrumbs {}
     }
 
     .category {
@@ -318,6 +332,7 @@ header {
             margin: 20px 0;
         }
     }
+
 }
 
 .category-list {
@@ -325,9 +340,9 @@ header {
     height: fit-content;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
 
     .category-item {
         width: 100%;
@@ -341,7 +356,7 @@ header {
         border-radius: .625rem;
         cursor: pointer;
         transition: border-color .13s ease, transform .13s ease;
-        box-shadow: 0 0 16px 4px #eb01000d;
+        box-shadow: 0 0 16px 4px #0000000d;
 
         &:hover {}
 
@@ -359,6 +374,212 @@ header {
             font-size: .75rem;
             text-align: center;
             margin: 20px 0;
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    min-height: 150px;
+    margin-top: 80px;
+    background-color: $main-dark;
+    border-radius: 1.6rem 1.6rem 0 0;
+    padding: 40px;
+
+    .wrapper {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .top-footer {
+        width: 100%;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+
+        .logo-link {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .rights-link {
+            color: $grey;
+            margin-left: auto;
+            font-size: .6875rem;
+            transition: color .13s ease;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    .bottom-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .cat-title {
+            font-size: .75rem;
+            line-height: 2rem;
+            font-weight: 500;
+            border-bottom: 1px solid $grey;
+            transition: color .13s ease;
+            color: $grey;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        .active-link {
+            border-color: $brand-color;
+        }
+
+        .cat-list {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 15px;
+
+            .cat-list-link {
+                color: $grey;
+                font-size: .75rem;
+                transition: color .13s ease;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+
+        }
+    }
+
+}
+
+
+// Page Category.html
+
+.category-page {
+    .category-list {
+        justify-content: space-between;
+    }
+
+    .category-item {
+        width: 15%;
+    }
+}
+
+
+// Page Category-products.html
+
+
+.category-product-page {
+    .products-list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        gap: 32px;
+
+        .products-item {
+            width: 15%;
+            min-height: 410px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            padding: 5px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+            .product-link {
+                position: relative;
+            }
+
+            .product-link:hover .products-title {
+                color: $brand-color;
+            }
+
+            .product-link:hover .hidden-product-img {
+                opacity: 1;
+            }
+
+            .product-img {
+                width: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
+
+
+            .hidden-product-img {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: opacity .13s ease;
+            }
+
+            .products-title,
+            .products-price,
+            .products-lot {
+                text-align: center;
+            }
+
+            .products-title {
+                margin: 10px 0;
+                line-height: 110%;
+                font-size: .75rem;
+                transition: color .13s ease;
+            }
+
+            .products-price {
+                margin-top: auto;
+
+                font-size: .875rem;
+                font-weight: 600;
+                color: $main-dark;
+            }
+
+            .products-lot {
+                font-size: .6875rem;
+            }
+
+            .buy-btn {
+                width: 100%;
+                min-height: 40px;
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $light-brand-color;
+                color: #fff;
+                font-weight: 600;
+                border: none;
+                border-radius: 7px;
+                cursor: pointer;
+                transition: background-color .13s ease, transform .13s ease;
+
+                &:hover {
+                    background-color: $brand-color;
+                }
+
+                &:active {
+                    transform: translateY(2px);
+                }
+            }
+        }
+    }
+
+    .second-swiper {
+        .swiper-scrollbar {
+            .swiper-scrollbar-drag {
+                background: $brand-color;
+            }
         }
     }
 }

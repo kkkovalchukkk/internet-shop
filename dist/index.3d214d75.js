@@ -533,7 +533,6 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"bB7Pu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _indexScss = require("./styles/index.scss");
 var _resetcss = require("resetcss");
 var _boxicons = require("boxicons");
 var _swiper = require("swiper");
@@ -550,7 +549,7 @@ const swiper = new (0, _swiperDefault.default)(".swiper", {
     }
 });
 
-},{"./styles/index.scss":"dTytc","resetcss":"liSNf","boxicons":"1afqO","swiper":"cCbRx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dTytc":[function() {},{}],"liSNf":[function() {},{}],"1afqO":[function(require,module,exports) {
+},{"resetcss":"liSNf","boxicons":"1afqO","swiper":"cCbRx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"liSNf":[function() {},{}],"1afqO":[function(require,module,exports) {
 !function(t, e, n, r, o) {
     if ("customElements" in n) o();
     else {

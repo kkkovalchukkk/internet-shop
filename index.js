@@ -1,10 +1,10 @@
-import './styles/index.scss';
 import 'resetcss';
 import 'boxicons';
 
 
 import Swiper, {
     Navigation,
+    Pagination
 } from 'swiper';
 
 const swiper = new Swiper('.swiper', {
