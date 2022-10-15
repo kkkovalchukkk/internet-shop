@@ -1,16 +1,10 @@
-import 'resetcss';
-import 'boxicons';
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
 
-
-import Swiper, {
-    Navigation,
-    Pagination
-} from 'swiper';
+import 'https://unpkg.com/boxicons@2.1.4/dist/boxicons.js';
 
 const swiper = new Swiper('.swiper', {
     slidesPerView: 7,
     direction: 'horizontal',
-    modules: [Navigation],
     navigation: {
         nextEl: '.swp-next',
         prevEl: '.swp-prev',
